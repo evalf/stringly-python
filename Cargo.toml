@@ -1,0 +1,21 @@
+[package]
+name = "stringly-python"
+version = "0.1.0-unreleased"
+authors = ["Evalf <info@evalf.com>"]
+edition = "2018"
+license = "MIT"
+repository = "https://github.com/evalf/stringly-python"
+keywords = ["serde", "serialization", "python"]
+categories = ["encoding"]
+description = "Human readable serialization format"
+readme = "README.md"
+
+[lib]
+name = "stringly"
+crate-type = ["cdylib"]
+
+[dependencies]
+stringly = { git = "https://github.com/evalf/stringly-rust", branch = "dev" }
+serde = "1.0"
+serde-python-typing = { git = "https://github.com/evalf/serde-python-typing", branch = "dev", features = ["complex-str"] }
+pyo3 = { version = "0.11", features = ["extension-module"] }
